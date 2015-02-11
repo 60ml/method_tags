@@ -23,6 +23,14 @@ module MethodTags
 
       remove_instance_variable :@last_names
     end
+
+    if Rails
+      def tagged_action(tag_name)
+        -> {
+          action_name.to_sym.in? tagged_methods(tag_name)
+        }
+      end
+    end
   end
 
   module InstanceMethod

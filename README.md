@@ -46,6 +46,20 @@ before_filter :foo_filter, only: [:foo_aa,
  end
 ```
 
+このように記述した場合、メソッド `foo` と `baz` にはタグが適用されます。
+
+タグ付けされたメソッド名には、インスタンスから `tagged_methods` という private メソッドでアクセスできます。
+
+フィルタの `if` オプションが長いので、Rails 用に `tagged_action` という
+クラスメソッドも用意しました。これを使えば上記のフィルタは
+
+```ruby
+before_filter :filter_foo, if: tagged_action(:tag_foo)
+```
+
+と記述できます。
+
+
 ライセンス
 -----------
 MIT ライセンスです。

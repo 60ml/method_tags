@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "method_tags"
-  s.version     = "0.0.1"
+  s.version     = "0.0.11"
   s.date        = "2015-02-12"
   s.summary     = "You can tag methods to group them"
   s.description = "You can tag methods to group them"
