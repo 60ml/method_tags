@@ -1,6 +1,5 @@
 module MethodTags
   def self.included(base)
-    puts base
     base.extend ClassMethod
     base.include InstanceMethod
   end
